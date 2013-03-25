@@ -79,21 +79,24 @@ $post_type_options = array(
 $meta_options = array(
 	'setup' => array(
 		'id' => 'rt_product_meta',
-		'title' => 'Product Options'
+		'title' => 'Product Details'
 	),
-	'field' => array(
-		'name' => '_price',
-		'label' => 'Price: ',
+	'_price' => array(
+		'label' => 'Price (USD):',
 		'type' => 'text',
-		'before' => '<h1>Before</h1>',
-		'after' => '<h2>After</h2>'
-	)
+		'before' => '',
+		'after' => ''
+	),
+	'_sample_profile' => array(
+		'label' => 'Sample Profile URL:',
+		'type' => 'media'
+	),
 	
 );
 
 if( is_dir( dirname(dirname(__FILE__)) . '/rocktree-core/rocktree-core' ) ) {
 	//$jade_gs = new GiftShop($gs_args, $gs_vals);
-	$moon_rock = new Rock($post_type_options, $meta_options);
+	$jade = new Rock($post_type_options, $meta_options);
 	$MyUpdateChecker = new PluginUpdateChecker(
 	    'http://wp-plugins.rocktreedesign.com/jade/update.json',
 	    __FILE__,
