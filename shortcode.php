@@ -1,8 +1,8 @@
 <?php
-global $jade;
+//global $jade;
 
 extract( shortcode_atts( array(
-	'feature' => false,
+	'' => ''
 ), $atts ) );
 
 global $post;

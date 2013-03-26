@@ -16,51 +16,38 @@ require_once( dirname(__FILE__) . '/rocktree-core.php' ); // REQUIRED!!! install
 // this file doesn't exist right now. Will want to copy widget.php from another plugin.
 //require_once(dirname(__FILE__) . '/widgets.php'); // custom widgets
 
-/* The Values Array
+/* Gift Shop (Options Page)
 -------------------------------------------------------------------------------- */
-$gs_vals = array(
-	'Email' => array(
-		'email_notification' => array(
-			'name' => 'email_notification',
-			'label' => 'Email Notification:',
-			'type' => 'boolean',
-			'default' => false,
-			'after' => '&nbsp;&nbsp;<i>Send email notification upon form submission?</i>'
-		),
-		'email' => array(
-			'name' => 'email',
-			'label' => 'Email Address:',
-			'type' => 'text',
-			'default' => 'you@yourdomain.com',
-			'before' => '<p><i>Address to send email notification.</i></p>'
+// page setup
+$gs_setup = array(
+	'post_type' => 'rt_jade',
+	'title' => 'Products Settings',
+	'menu_title' => 'Settings',
+	'menu_slug' => 'rt_jade_settings',
+);
+
+// options control
+$gs_options = array(
+	'List_Options' => array (
+		'button_color' => array(
+			'name' => 'button_color',
+			'label' => 'Button Color:',
+			'type' => 'color',
+			'default' => '#68c5d7'
+		)
+	),
+	'Featured_Product' => array(
+		'featured_product' => array(
+			'name' => 'featured_product',
+			'label' => 'Featured Product:',
+			'type' => 'post_type_single_option',
+			'default' => ''
 		),
 	),
-	'Button' => array(
-		'button_bkg' => array(
-			'name' => 'button_bkg',
-			'label' => 'Button Background Color',
-			'type' => 'color',
-			'default' => '#333333',
-		),
-		'button_text' => array(
-			'name' => 'button_text',
-			'label' => 'Button Text',
-			'type' => 'text',
-			'default' => 'Send Message',
-		)
-	)
 );
 
-$gs_args = array(
-	'post_type' => 'rt_mrcf',
-	'title' => 'Contact Form Settings',
-	'menu_title' => 'Settings',
-	'menu_slug' => 'rt_mrcf_settings',
-	'script_dir' => plugins_url() . '/moon-rock-contact-form/admin/settings.js',
-	'style_dir' => plugins_url() . '/moon-rock-contact-form/admin/settings.css',
-	
-);
-
+/* Post Type Setup
+-------------------------------------------------------------------------------- */
 $post_type_options = array(
 	'name' => 'Products',
 	'prefix' => 'jade',
@@ -76,6 +63,8 @@ $post_type_options = array(
 	'dynamic_style_dir' => dirname(__FILE__) . '/custom-style.php',
 );
 
+/* Post Type Meta Options
+-------------------------------------------------------------------------------- */
 $meta_options = array(
 	'setup' => array(
 		'id' => 'rt_product_meta',
@@ -94,8 +83,10 @@ $meta_options = array(
 	
 );
 
+/* File Loader
+-------------------------------------------------------------------------------- */
 if( is_dir( dirname(dirname(__FILE__)) . '/rocktree-core/rocktree-core' ) ) {
-	//$jade = new GiftShop($gs_args, $gs_vals);
+	$jade = new GiftShop($gs_setup, $gs_options);
 	$jade_rock = new Rock($post_type_options, $meta_options);
 	$MyUpdateChecker = new PluginUpdateChecker(
 	    'http://wp-plugins.rocktreedesign.com/jade/update.json',
