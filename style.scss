@@ -48,91 +48,58 @@ $error: #CC0000;
   }
 }
 
-/* =CONTACT FORM
+/* =PRODUCT LIST
 ---------------------------------- */
-.rt-mrcf {
-  color: lighten($primary, 20%);
-  label, input, textarea {
-    display: block;
-  }
-  label {
-    font-size: 16px;
-    margin: 20px 0 0 0;
-  }
-  .rt-mrcf-input {
-    font-size: 16px !important;
-    border: 1px solid lighten($primary, 80%);
-    @include corners(3px);
-    width: 90%;
-    padding: 5px;
-    color: lighten($primary, 70%);
-    &:focus {
-      outline: none;
-    }
-  }
-  .rt-mrcf-submit {
-    @include button(); 
-    color: lighten($primary, 100%) !important;
-    margin: 20px 0 0 0;
-    text-align: right;
-    &:focus {
-      outline-color: $accent-1;
-    }
-  }
-  textarea {
-    height: 125px;
-    &:focus {
-      outline: none;
-    }
-  }
-}
-
-.rt-mrcf-required {
-  font-size: 12px !important;
-}
-
-.error {
-  font-size: 14px !important;
-  color: $error;
-  font-style: italic;
-}
-  
-.footer-widget .error {
-  color: lighten($primary, 100%);
-}
-
-/* Styling for footer widget */
-.footer-widget {
-  .rt-mrcf {
-    label, input, textarea {
-      font-size: 13px;
-    }
-  }
-  .rt-success {
-  padding: 0;
-  border: none;
-  background: transparent;
-    span {
-      font-size: 20px;
-      font-weight: bold;
-      float: left;
-    }
-  }
-}
-
-.rt-input-blur {
-  color: $primary !important;
-}
-
-/* Callout Boxes */
-.rt-success {
-  padding: 10px;
-  border: 1px solid $success;
-  background: lighten($primary, 95%);
+h2.rt-product-title {
+  font-weight: normal;
   font-size: 14px;
-  span {
-    font-size: 24px;
-    font-weight: bold;
+  margin: 25px 0 0 0;
+  clear: both;
+  .rt-product-icon {
+    font-size: 16px;
+    padding: 4px 7px;
     margin: 0 10px 0 0;
+    background: lighten($accent-1, 25%);
+    color: #FFFFFF;
+    &:hover {
+      background: $accent-1;
+      cursor: pointer;
+    }
   }
 }
+
+div.rt-product-description {
+  display: none;
+  color: lighten($primary, 100%);
+  background: lighten($accent-1, 25%);
+  padding: 10px;
+  margin: 5px 0 0 0;
+  width: 50%;
+  clear: none;
+  p, ul {
+    width: 60%;
+  }
+  .rt-product-price, .rt-product-preview {
+    float: right;
+    background: lighten($accent-1, 15%);
+    padding: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    clear: right;
+    width: 30%;
+    text-align: center;
+  }
+  .rt-product-price {
+    background: $accent-1;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .rt-product-preview {
+    margin: 10px 0 0 0;
+    font-size: 16px;
+    &:hover {
+      background: $accent-1;
+    }
+  }
+}
+

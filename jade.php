@@ -65,7 +65,7 @@ $post_type_options = array(
 	'name' => 'Products',
 	'prefix' => 'jade',
 	'dir' => 'jade',
-	'shortcode' => 'jade',
+	'shortcode' => 'products',
 	'shortcode_dir' => dirname(__FILE__) . '/shortcode.php',
 	'post_type' => 'rt_jade',
 	'item' => 'Product',
@@ -95,8 +95,8 @@ $meta_options = array(
 );
 
 if( is_dir( dirname(dirname(__FILE__)) . '/rocktree-core/rocktree-core' ) ) {
-	//$jade_gs = new GiftShop($gs_args, $gs_vals);
-	$jade = new Rock($post_type_options, $meta_options);
+	//$jade = new GiftShop($gs_args, $gs_vals);
+	$jade_rock = new Rock($post_type_options, $meta_options);
 	$MyUpdateChecker = new PluginUpdateChecker(
 	    'http://wp-plugins.rocktreedesign.com/jade/update.json',
 	    __FILE__,
