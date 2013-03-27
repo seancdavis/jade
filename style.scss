@@ -53,8 +53,9 @@ $error: #CC0000;
 h2.rt-product-title {
   font-weight: normal;
   font-size: 14px;
-  margin: 25px 0 0 0;
+  margin: 0;
   clear: both;
+  width: 50%;
   .rt-product-icon {
     font-size: 16px;
     padding: 4px 7px;
@@ -74,12 +75,48 @@ div.rt-product-description {
   background: lighten($accent-1, 25%);
   padding: 10px;
   margin: 5px 0 0 0;
-  width: 50%;
-  clear: none;
-  p, ul {
-    width: 60%;
-  }
+  width: 480px;
   .rt-product-price, .rt-product-preview {
+    float: right;
+    background: lighten($accent-1, 15%);
+    padding: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    clear: right;
+    width: 120px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 0 10px 10px;
+  }
+  .rt-product-preview:hover {
+    background: $accent-1;
+  }
+}
+
+hr.rt-product-line {
+  width: 480px;
+  padding: 0 10px;
+  margin: 15px 0;
+  background: lighten($primary, 85%);
+}
+
+/* =FEATURED PRODUCT
+---------------------------------- */
+div.rt-feat-product {
+  width: 500px;
+  margin: 0 0 15px 0;
+  background: lighten($accent-1, 25%);
+  color: #FFFFFF;
+  h3 {
+    background: $accent-1;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    border-bottom: 3px solid #FFFFFF;
+  }
+  p.rt-feat-product-description {
+    padding: 10px;
+  }
+  .rt-feat-product-price, .rt-feat-product-preview {
     float: right;
     background: lighten($accent-1, 15%);
     padding: 10px;
@@ -88,18 +125,20 @@ div.rt-product-description {
     clear: right;
     width: 30%;
     text-align: center;
-  }
-  .rt-product-price {
-    background: $accent-1;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .rt-product-preview {
-    margin: 10px 0 0 0;
     font-size: 16px;
+    margin: 0 10px 10px 10px;
+  }
+  .rt-feat-product-preview {
     &:hover {
       background: $accent-1;
     }
   }
 }
 
+@media screen and (max-width : 600px) {
+  
+  div.rt-feat-product, hr.rt-product-line, div.rt-product-description {
+    width: 100%;
+  }
+  
+}

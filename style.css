@@ -5,8 +5,9 @@
 h2.rt-product-title {
   font-weight: normal;
   font-size: 14px;
-  margin: 25px 0 0 0;
-  clear: both; }
+  margin: 0;
+  clear: both;
+  width: 50%; }
   h2.rt-product-title .rt-product-icon {
     font-size: 16px;
     padding: 4px 7px;
@@ -23,10 +24,7 @@ div.rt-product-description {
   background: #68c5d7;
   padding: 10px;
   margin: 5px 0 0 0;
-  width: 50%;
-  clear: none; }
-  div.rt-product-description p, div.rt-product-description ul {
-    width: 60%; }
+  width: 480px; }
   div.rt-product-description .rt-product-price, div.rt-product-description .rt-product-preview {
     float: right;
     background: #3fb5cc;
@@ -34,14 +32,47 @@ div.rt-product-description {
     text-decoration: none;
     color: #FFFFFF;
     clear: right;
-    width: 30%;
-    text-align: center; }
-  div.rt-product-description .rt-product-price {
+    width: 120px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 0 10px 10px; }
+  div.rt-product-description .rt-product-preview:hover {
+    background: #288597; }
+
+hr.rt-product-line {
+  width: 480px;
+  padding: 0 10px;
+  margin: 15px 0;
+  background: #d9d9d9; }
+
+/* =FEATURED PRODUCT
+---------------------------------- */
+div.rt-feat-product {
+  width: 500px;
+  margin: 0 0 15px 0;
+  background: #68c5d7;
+  color: #FFFFFF; }
+  div.rt-feat-product h3 {
     background: #288597;
-    font-size: 28px;
-    font-weight: bold; }
-  div.rt-product-description .rt-product-preview {
-    margin: 10px 0 0 0;
-    font-size: 16px; }
-    div.rt-product-description .rt-product-preview:hover {
-      background: #288597; }
+    padding: 10px;
+    margin: 0 0 10px 0;
+    border-bottom: 3px solid white; }
+  div.rt-feat-product p.rt-feat-product-description {
+    padding: 10px; }
+  div.rt-feat-product .rt-feat-product-price, div.rt-feat-product .rt-feat-product-preview {
+    float: right;
+    background: #3fb5cc;
+    padding: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    clear: right;
+    width: 30%;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 10px 10px 10px; }
+  div.rt-feat-product .rt-feat-product-preview:hover {
+    background: #288597; }
+
+@media screen and (max-width: 600px) {
+  div.rt-feat-product, hr.rt-product-line, div.rt-product-description {
+    width: 100%; } }
