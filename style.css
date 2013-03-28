@@ -1,7 +1,20 @@
 /* Sass Control
 ------------------------------------- */
-/* =PRODUCT LIST
+/* =CONTAINERS & CONTENT
 ---------------------------------- */
+div.rt-feat-product {
+  width: 500px;
+  margin: 0 0 15px 0;
+  background: #68c5d7;
+  color: #FFFFFF; }
+  div.rt-feat-product h3 {
+    background: #288597;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 3px solid white; }
+  div.rt-feat-product .rt-product-info {
+    padding: 10px; }
+
 h2.rt-product-title {
   font-weight: normal;
   font-size: 14px;
@@ -25,54 +38,50 @@ div.rt-product-description {
   padding: 10px;
   margin: 5px 0 0 0;
   width: 480px; }
-  div.rt-product-description .rt-product-price, div.rt-product-description .rt-product-preview {
-    float: right;
-    background: #3fb5cc;
-    padding: 10px;
-    text-decoration: none;
-    color: #FFFFFF;
-    clear: right;
-    width: 120px;
-    text-align: center;
-    font-size: 16px;
-    margin: 0 0 10px 10px; }
-  div.rt-product-description .rt-product-preview:hover {
+
+/* =BUTTONS
+---------------------------------- */
+.rt-product-button {
+  background: #3fb5cc;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  width: 120px; }
+  .rt-product-button:hover {
+    text-decoration: none; }
+  .rt-product-button:hover {
+    text-decoration: none; }
+
+.rt-product-price {
+  float: right;
+  clear: right;
+  margin: 0 0 10px 10px; }
+
+.rt-product-preview {
+  float: right;
+  clear: right;
+  margin: 0 0 10px 10px; }
+  .rt-product-preview:hover {
     background: #288597; }
 
+.rt-product-learn-more {
+  float: left;
+  clear: left; }
+  .rt-product-learn-more:hover {
+    background: #288597; }
+
+/* =LINE
+---------------------------------- */
 hr.rt-product-line {
   width: 480px;
   padding: 0 10px;
   margin: 15px 0;
   background: #d9d9d9; }
 
-/* =FEATURED PRODUCT
+/* =RESPONSIVE
 ---------------------------------- */
-div.rt-feat-product {
-  width: 500px;
-  margin: 0 0 15px 0;
-  background: #68c5d7;
-  color: #FFFFFF; }
-  div.rt-feat-product h3 {
-    background: #288597;
-    padding: 10px;
-    margin: 0 0 10px 0;
-    border-bottom: 3px solid white; }
-  div.rt-feat-product p.rt-feat-product-description {
-    padding: 10px; }
-  div.rt-feat-product .rt-feat-product-price, div.rt-feat-product .rt-feat-product-preview {
-    float: right;
-    background: #3fb5cc;
-    padding: 10px;
-    text-decoration: none;
-    color: #FFFFFF;
-    clear: right;
-    width: 30%;
-    text-align: center;
-    font-size: 16px;
-    margin: 0 10px 10px 10px; }
-  div.rt-feat-product .rt-feat-product-preview:hover {
-    background: #288597; }
-
 @media screen and (max-width: 600px) {
   div.rt-feat-product, hr.rt-product-line, div.rt-product-description {
     width: 100%; } }

@@ -28,12 +28,26 @@ $gs_setup = array(
 
 // options control
 $gs_options = array(
-	'List_Options' => array (
+	'Product_Display' => array (
 		'button_color' => array(
 			'name' => 'button_color',
 			'label' => 'Button Color:',
 			'type' => 'color',
 			'default' => '#68c5d7'
+		),
+		'preview_button_text' => array(
+			'name' => 'preview_button_text',
+			'label' => 'Preview Button Text:',
+			'type' => 'text',
+			'default' => 'Product Preview',
+			'after' => '<p><i>The text that will appear as a button link to a sample or preview of your product.</i></p>'
+		),
+		'learn_more_button_text' => array(
+			'name' => 'learn_more_button_text',
+			'label' => 'Learn More Button Text:',
+			'type' => 'text',
+			'default' => 'Learn More',
+			'after' => '<p><i>The text that will appear as a button link to more information about your product.</i></p>'
 		)
 	),
 	'Featured_Product' => array(
@@ -61,6 +75,7 @@ $post_type_options = array(
 	'script_dir' => plugins_url() . '/jade/scripts.js', 
 	'style_dir' => plugins_url() . '/jade/style.css',
 	'dynamic_style_dir' => dirname(__FILE__) . '/custom-style.php',
+	//'taxonomies' => array('category')
 );
 
 /* Post Type Meta Options
@@ -77,8 +92,17 @@ $meta_options = array(
 		'after' => ''
 	),
 	'_sample_profile' => array(
-		'label' => 'Sample Profile URL:',
+		'label' => 'Preview URL:',
 		'type' => 'media'
+	),
+	'_learn_more' => array(
+		'label' => 'Learn More URL:',
+		'type' => 'text',
+		'after' => '<p><i>Use if you want to link to another page or site for more information.</i></p>'
+	),
+	'_lm_new_window' => array(
+		'label' => 'Open Learn More Link in New Window?',
+		'type' => 'boolean'
 	),
 	
 );

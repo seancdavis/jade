@@ -3,7 +3,7 @@
 extract( shortcode_atts( array(
 	'featured' => false
 ), $atts ) );
-
+global $jade; 
 if( $featured == false ) { ?>
 	<hr class="rt-product-line">
 	<?php global $post;
@@ -15,34 +15,49 @@ if( $featured == false ) { ?>
 		</h2>
 		<div id="rt-product-description-<?php echo $post->ID; ?>" class="rt-product-description clearfix">
 			<?php if( get_post_meta($post->ID, '_sample_profile', true) != '' ) : ?>
-				<a class="rt-product-preview" href="<?php echo get_post_meta($post->ID, '_sample_profile', true); ?>" target="_blank">Sample Profile</a>
+				<a class="rt-product-preview rt-product-button" href="<?php echo get_post_meta($post->ID, '_sample_profile', true); ?>" target="_blank">
+					<?php echo $jade->option('preview_button_text'); ?>
+				</a>
 			<?php endif; ?>
 			<?php if( get_post_meta($post->ID, '_price', true) != '' ) : ?>
-				<span class="rt-product-price">$<?php echo get_post_meta($post->ID, '_price', true); ?></span>
+				<span class="rt-product-price rt-product-button">$<?php echo get_post_meta($post->ID, '_price', true); ?></span>
 			<?php endif; ?>
 			<?php the_content(); ?>
+			<?php if( get_post_meta($post->ID, '_learn_more', true) != '' ) : ?>
+				<a class="rt-product-learn-more rt-product-button" href="<?php echo get_post_meta($post->ID, '_learn_more', true); ?>" <?php if( get_post_meta($post->ID, '_lm_new_window',true) == true ) : ?>target='_blank'<?php endif; ?>>
+					<?php echo $jade->option('learn_more_button_text'); ?>
+				</a>
+			<?php endif; ?>	
 		</div>
 		<hr class="rt-product-line">
 		
 	<?php endwhile;
 }
 else {
-	global $jade; 
 	$id = $jade->option('featured_product'); ?>
 	<h2>Featured Product</h2>
 	<div class="rt-feat-product clearfix">
 		<h3><?php echo get_the_title($id); ?></h3>
-		<?php if( get_post_meta($id, '_sample_profile', true) != '' ) : ?>
-			<a class="rt-feat-product-preview" href="<?php echo get_post_meta($id, '_sample_profile', true); ?>" target="_blank">Sample Profile</a>
-		<?php endif; ?>
-		<?php if( get_post_meta($id, '_price', true) != '' ) : ?>
-			<p class="rt-feat-product-price">$<?php echo get_post_meta($id, '_price', true); ?></p>
-		<?php endif; ?>	
-		<p class="rt-feat-product-description">
-			<?php 
-			$feat_post = get_post( $id );
-			echo $feat_post->post_content; ?>
-		</p>
+		<div class="rt-product-info">
+			<?php if( get_post_meta($id, '_sample_profile', true) != '' ) : ?>
+				<a class="rt-product-preview rt-product-button" href="<?php echo get_post_meta($id, '_sample_profile', true); ?>" target="_blank">
+					<?php echo $jade->option('preview_button_text'); ?>
+				</a>
+			<?php endif; ?>
+			<?php if( get_post_meta($id, '_price', true) != '' ) : ?>
+				<p class="rt-product-price rt-product-button">$<?php echo get_post_meta($id, '_price', true); ?></p>
+			<?php endif; ?>	
+			<p class="rt-feat-product-description">
+				<?php 
+				$feat_post = get_post( $id );
+				echo $feat_post->post_content; ?>
+			</p>
+			<?php if( get_post_meta($id, '_learn_more', true) != '' ) : ?>
+				<a class="rt-product-learn-more rt-product-button" href="<?php echo get_post_meta($id, '_learn_more', true); ?>" <?php if( get_post_meta($id, '_lm_new_window',true) == true ) : ?>target='_blank'<?php endif; ?>>
+					<?php echo $jade->option('learn_more_button_text'); ?>
+				</a>
+			<?php endif; ?>
+		</div>	
 	</div>
 	
 <?php } 

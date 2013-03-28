@@ -36,20 +36,38 @@ $error: #CC0000;
   border-radius: $radius; /* CSS3 */ 
 }
 
-@mixin button( $color: lighten($primary, 20%) ) {
+@mixin button( $color: #FFFFFF, $background: lighten($accent-1, 15%) ) {
   //@include gradient( $color, lighten($color, 20%) );
-  padding: 10px 20px;
-  color: white;
-  border: none;
+  background: $background;
+  color: $color;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
   font-size: 16px;
   &:hover {
-    cursor: pointer;
+    text-decoration: none;
     //@include gradient( $color, darken($color, 20%) );
   }
 }
 
-/* =PRODUCT LIST
+/* =CONTAINERS & CONTENT
 ---------------------------------- */
+div.rt-feat-product {
+  width: 500px;
+  margin: 0 0 15px 0;
+  background: lighten($accent-1, 25%);
+  color: #FFFFFF;
+  h3 {
+    background: $accent-1;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 3px solid #FFFFFF;
+  }
+  .rt-product-info {
+    padding: 10px;
+  }
+}
+
 h2.rt-product-title {
   font-weight: normal;
   font-size: 14px;
@@ -76,23 +94,43 @@ div.rt-product-description {
   padding: 10px;
   margin: 5px 0 0 0;
   width: 480px;
-  .rt-product-price, .rt-product-preview {
-    float: right;
-    background: lighten($accent-1, 15%);
-    padding: 10px;
+}
+
+/* =BUTTONS
+---------------------------------- */
+.rt-product-button {
+  @include button();
+  width: 120px;
+  &:hover {
     text-decoration: none;
-    color: #FFFFFF;
-    clear: right;
-    width: 120px;
-    text-align: center;
-    font-size: 16px;
-    margin: 0 0 10px 10px;
   }
-  .rt-product-preview:hover {
+}
+
+.rt-product-price {
+  float: right;
+  clear: right;
+  margin: 0 0 10px 10px;
+}
+
+.rt-product-preview {
+  float: right;
+  clear: right;
+  margin: 0 0 10px 10px;
+  &:hover {
     background: $accent-1;
   }
 }
 
+.rt-product-learn-more {
+  float: left;
+  clear: left;
+  &:hover {
+    background: $accent-1;
+  }
+}
+
+/* =LINE
+---------------------------------- */
 hr.rt-product-line {
   width: 480px;
   padding: 0 10px;
@@ -100,41 +138,8 @@ hr.rt-product-line {
   background: lighten($primary, 85%);
 }
 
-/* =FEATURED PRODUCT
+/* =RESPONSIVE
 ---------------------------------- */
-div.rt-feat-product {
-  width: 500px;
-  margin: 0 0 15px 0;
-  background: lighten($accent-1, 25%);
-  color: #FFFFFF;
-  h3 {
-    background: $accent-1;
-    padding: 10px;
-    margin: 0 0 10px 0;
-    border-bottom: 3px solid #FFFFFF;
-  }
-  p.rt-feat-product-description {
-    padding: 10px;
-  }
-  .rt-feat-product-price, .rt-feat-product-preview {
-    float: right;
-    background: lighten($accent-1, 15%);
-    padding: 10px;
-    text-decoration: none;
-    color: #FFFFFF;
-    clear: right;
-    width: 30%;
-    text-align: center;
-    font-size: 16px;
-    margin: 0 10px 10px 10px;
-  }
-  .rt-feat-product-preview {
-    &:hover {
-      background: $accent-1;
-    }
-  }
-}
-
 @media screen and (max-width : 600px) {
   
   div.rt-feat-product, hr.rt-product-line, div.rt-product-description {
