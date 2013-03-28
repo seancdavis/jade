@@ -14,8 +14,12 @@ if( $featured == false ) { ?>
 			<?php the_title(); ?>
 		</h2>
 		<div id="rt-product-description-<?php echo $post->ID; ?>" class="rt-product-description clearfix">
-			<a class="rt-product-preview" href="<?php echo get_post_meta($post->ID, '_sample_profile', true); ?>" target="_blank">Sample Profile</a>
-			<span class="rt-product-price">$<?php echo get_post_meta($post->ID, '_price', true); ?></span>
+			<?php if( get_post_meta($post->ID, '_sample_profile', true) != '' ) : ?>
+				<a class="rt-product-preview" href="<?php echo get_post_meta($post->ID, '_sample_profile', true); ?>" target="_blank">Sample Profile</a>
+			<?php endif; ?>
+			<?php if( get_post_meta($post->ID, '_price', true) != '' ) : ?>
+				<span class="rt-product-price">$<?php echo get_post_meta($post->ID, '_price', true); ?></span>
+			<?php endif; ?>
 			<?php the_content(); ?>
 		</div>
 		<hr class="rt-product-line">
@@ -28,8 +32,12 @@ else {
 	<h2>Featured Product</h2>
 	<div class="rt-feat-product clearfix">
 		<h3><?php echo get_the_title($id); ?></h3>
-		<a class="rt-feat-product-preview" href="<?php echo get_post_meta($id, '_sample_profile', true); ?>" target="_blank">Sample Profile</a>
-		<p class="rt-feat-product-price">$<?php echo get_post_meta($id, '_price', true); ?></p>
+		<?php if( get_post_meta($id, '_sample_profile', true) != '' ) : ?>
+			<a class="rt-feat-product-preview" href="<?php echo get_post_meta($id, '_sample_profile', true); ?>" target="_blank">Sample Profile</a>
+		<?php endif; ?>
+		<?php if( get_post_meta($id, '_price', true) != '' ) : ?>
+			<p class="rt-feat-product-price">$<?php echo get_post_meta($id, '_price', true); ?></p>
+		<?php endif; ?>	
 		<p class="rt-feat-product-description">
 			<?php 
 			$feat_post = get_post( $id );
