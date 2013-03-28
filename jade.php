@@ -52,14 +52,14 @@ $gs_options = array(
 			'label' => 'Preview Button Text:',
 			'type' => 'text',
 			'default' => 'Product Preview',
-			'after' => '<p><i>The text that will appear as a button link to a sample or preview of your product.</i></p>'
+			'help' => 'The text that will appear as a button link to a sample or preview of your product.'
 		),
 		'learn_more_button_text' => array(
 			'name' => 'learn_more_button_text',
 			'label' => 'Learn More Button Text:',
 			'type' => 'text',
 			'default' => 'Learn More',
-			'after' => '<p><i>The text that will appear as a button link to more information about your product.</i></p>'
+			'help' => 'The text that will appear as a button link to more information about your product.'
 		)
 	),
 	'Featured_Product' => array(
@@ -74,7 +74,7 @@ $gs_options = array(
 			'label' => 'Title Background Color:',
 			'type' => 'color',
 			'default' => '#288597',
-			'after' => '<p><i>We suggest you go darker than your buttons, but of the same hue.</i></p>'
+			'help' => 'We suggest you go darker than your buttons, but of the same hue.'
 		),
 	),
 );
