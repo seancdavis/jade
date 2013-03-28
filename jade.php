@@ -29,11 +29,23 @@ $gs_setup = array(
 // options control
 $gs_options = array(
 	'Product_Display' => array (
+		'box_color' => array(
+			'name' => 'box_color',
+			'label' => 'Box Background:',
+			'type' => 'color',
+			'default' => '#68c5d7'
+		),
 		'button_color' => array(
 			'name' => 'button_color',
 			'label' => 'Button Color:',
 			'type' => 'color',
-			'default' => '#68c5d7'
+			'default' => '#3fb5cc'
+		),
+		'button_hover' => array(
+			'name' => 'button_hover',
+			'label' => 'Button Hover Color:',
+			'type' => 'color',
+			'default' => '#288597',
 		),
 		'preview_button_text' => array(
 			'name' => 'preview_button_text',
@@ -56,6 +68,13 @@ $gs_options = array(
 			'label' => 'Featured Product:',
 			'type' => 'post_type_single_option',
 			'default' => ''
+		),
+		'title_background' => array(
+			'name' => 'title_background',
+			'label' => 'Title Background Color:',
+			'type' => 'color',
+			'default' => '#288597',
+			'after' => '<p><i>We suggest you go darker than your buttons, but of the same hue.</i></p>'
 		),
 	),
 );
