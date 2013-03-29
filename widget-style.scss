@@ -1,0 +1,104 @@
+/* Sass Control
+------------------------------------- */
+$primary: #000000;
+$accent-1: #288597;
+$shadow: #CCCCCC;
+$success: #009b77;
+$error: #CC0000;
+
+@mixin gradient( $bottom-color: $primary, $top-color: lighten($primary, 25%) ) {
+  background-color: $top-color;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($top-color), to($bottom-color) );
+  background-image: -webkit-linear-gradient(top, $top-color, $bottom-color);
+  background-image: -moz-linear-gradient(top, $top-color, $bottom-color);
+  background-image: -ms-linear-gradient(top, $top-color, $bottom-color);
+  background-image: -o-linear-gradient(top, $top-color, $bottom-color);
+  background-image: linear-gradient(top, $top-color, $bottom-color);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr="+$top-color+", endColorstr="+$bottom-color+", GradientType=0)";
+}
+
+@mixin shadow( $x-val: 3px, $y-val: 3px, $blur: 5px, $color: $shadow ) {
+  -moz-box-shadow: $x-val $y-val $blur $color; /* Firefox */  
+  -webkit-box-shadow: $x-val $y-val $blur $color; /* Safari, Chrome */  
+  box-shadow: $x-val $y-val $blur $color; /* CSS3 */
+}
+
+@mixin opacity( $opacity-val: 50 ) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacity-val + ")"; /* IE 8 */
+  -moz-opacity: $opacity-val / 100; /* firefox */
+  -khtml-opacity: $opacity-val / 100; /* safari 1.x */
+  opacity: $opacity-val / 100; /* modern browsers */
+}
+
+@mixin corners( $radius: 15px ) {
+  -moz-border-radius: $radius; /* Firefox */  
+  -webkit-border-radius: $radius; /* Safari, Chrome */  
+  border-radius: $radius; /* CSS3 */ 
+}
+
+@mixin button( $color: #FFFFFF, $background: lighten($accent-1, 15%) ) {
+  //@include gradient( $color, lighten($color, 20%) );
+  background: $background;
+  color: $color;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  &:hover {
+    text-decoration: none;
+    //@include gradient( $color, darken($color, 20%) );
+  }
+}
+
+/* =CONTAINERS & CONTENT
+---------------------------------- */
+div.rt-feat-product-widget {
+  width: 500px;
+  margin: 0 0 15px 0;
+  background: lighten($accent-1, 25%);
+  color: #FFFFFF;
+  h3 {
+    background: $accent-1;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 3px solid #FFFFFF;
+  }
+  div.rt-product-widget-description {
+    display: none;
+    color: lighten($primary, 100%);
+    background: lighten($accent-1, 25%);
+    padding: 10px;
+    margin: 5px 0 0 0;
+    width: 480px;
+  }
+  .rt-product-widget-info {
+    padding: 10px;
+  }
+  .rt-product-widget-button {
+    @include button();
+    width: 120px;
+    &:hover {
+      text-decoration: none;
+    }
+  }  
+  .rt-product-widget-price {
+    float: right;
+    clear: right;
+    margin: 0 0 10px 10px;
+  }  
+  .rt-product-widget-preview {
+    float: right;
+    clear: right;
+    margin: 0 0 10px 10px;
+    &:hover {
+      background: $accent-1;
+    }
+  }  
+  .rt-product-widget-learn-more {
+    float: left;
+    clear: left;
+    &:hover {
+      background: $accent-1;
+    }
+  }
+}

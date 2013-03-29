@@ -1,0 +1,50 @@
+/* Sass Control
+------------------------------------- */
+/* =CONTAINERS & CONTENT
+---------------------------------- */
+div.rt-feat-product-widget {
+  width: 500px;
+  margin: 0 0 15px 0;
+  background: #68c5d7;
+  color: #FFFFFF; }
+  div.rt-feat-product-widget h3 {
+    background: #288597;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 3px solid white; }
+  div.rt-feat-product-widget div.rt-product-widget-description {
+    display: none;
+    color: white;
+    background: #68c5d7;
+    padding: 10px;
+    margin: 5px 0 0 0;
+    width: 480px; }
+  div.rt-feat-product-widget .rt-product-widget-info {
+    padding: 10px; }
+  div.rt-feat-product-widget .rt-product-widget-button {
+    background: #3fb5cc;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    width: 120px; }
+    div.rt-feat-product-widget .rt-product-widget-button:hover {
+      text-decoration: none; }
+    div.rt-feat-product-widget .rt-product-widget-button:hover {
+      text-decoration: none; }
+  div.rt-feat-product-widget .rt-product-widget-price {
+    float: right;
+    clear: right;
+    margin: 0 0 10px 10px; }
+  div.rt-feat-product-widget .rt-product-widget-preview {
+    float: right;
+    clear: right;
+    margin: 0 0 10px 10px; }
+    div.rt-feat-product-widget .rt-product-widget-preview:hover {
+      background: #288597; }
+  div.rt-feat-product-widget .rt-product-widget-learn-more {
+    float: left;
+    clear: left; }
+    div.rt-feat-product-widget .rt-product-widget-learn-more:hover {
+      background: #288597; }
