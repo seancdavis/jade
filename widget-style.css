@@ -48,3 +48,9 @@ div.rt-feat-product-widget {
     clear: left; }
     div.rt-feat-product-widget .rt-product-widget-learn-more:hover {
       background: #288597; }
+
+@media screen and (max-width: 1000px) {
+  div.rt-feat-product-widget .rt-product-widget-preview, div.rt-feat-product-widget .rt-product-widget-price, div.rt-feat-product-widget .rt-product-widget-learn-more {
+    float: left;
+    clear: both;
+    margin: 5px 0; } }
