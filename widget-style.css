@@ -3,8 +3,7 @@
 /* =CONTAINERS & CONTENT
 ---------------------------------- */
 div.rt-feat-product-widget {
-  width: 500px;
-  margin: 0 0 15px 0;
+  margin: 10px 0 0 0;
   background: #68c5d7;
   color: #FFFFFF; }
   div.rt-feat-product-widget h3 {
@@ -28,7 +27,8 @@ div.rt-feat-product-widget {
     text-decoration: none;
     text-align: center;
     font-size: 16px;
-    width: 120px; }
+    width: 120px;
+    text-shadow: none; }
     div.rt-feat-product-widget .rt-product-widget-button:hover {
       text-decoration: none; }
     div.rt-feat-product-widget .rt-product-widget-button:hover {

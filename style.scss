@@ -57,6 +57,7 @@ div.rt-feat-product {
   margin: 0 0 15px 0;
   background: lighten($accent-1, 25%);
   color: #FFFFFF;
+  padding: 0 0 10px 0;
   h3 {
     background: $accent-1;
     padding: 10px;
@@ -65,6 +66,9 @@ div.rt-feat-product {
   }
   .rt-product-info {
     padding: 10px;
+  }
+  .rt-feat-product-description {
+    margin: 0 0 5px 0;
   }
 }
 
@@ -92,7 +96,7 @@ div.rt-product-description {
   color: lighten($primary, 100%);
   background: lighten($accent-1, 25%);
   padding: 10px;
-  margin: 5px 0 0 0;
+  margin: 5px 0;
   width: 480px;
 }
 

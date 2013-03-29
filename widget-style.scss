@@ -53,8 +53,7 @@ $error: #CC0000;
 /* =CONTAINERS & CONTENT
 ---------------------------------- */
 div.rt-feat-product-widget {
-  width: 500px;
-  margin: 0 0 15px 0;
+  margin: 10px 0 0 0;
   background: lighten($accent-1, 25%);
   color: #FFFFFF;
   h3 {
@@ -77,6 +76,7 @@ div.rt-feat-product-widget {
   .rt-product-widget-button {
     @include button();
     width: 120px;
+    text-shadow: none;
     &:hover {
       text-decoration: none;
     }

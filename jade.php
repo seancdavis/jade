@@ -12,9 +12,7 @@ License:
 /* Load Files
 -------------------------------------------------------------------------------- */
 require_once( dirname(__FILE__) . '/rocktree-core.php' ); // REQUIRED!!! installs rocktree-core files if necessary
-
-// this file doesn't exist right now. Will want to copy widget.php from another plugin.
-//require_once(dirname(__FILE__) . '/widgets.php'); // custom widgets
+require_once(dirname(__FILE__) . '/widgets.php'); // custom widgets
 
 /* Gift Shop (Options Page)
 -------------------------------------------------------------------------------- */

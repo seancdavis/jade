@@ -24,11 +24,11 @@ class Jade_Widget extends WP_Widget {
 		extract( $args );
 		$title = apply_filters('widget_title', $instance['title'] );
 		echo $before_widget;
-		if ( $title ) echo '<h2>' . $title . '</h2>';
+		//if ( $title ) echo '<h2>' . $title . '</h2>';
 		
 		$id = $jade->option('featured_product');
 		if( $id != '' ) { ?>			
-			<div class="rt-feat-product-widget-widget clearfix">
+			<div class="rt-feat-product-widget clearfix">
 				<h3><?php echo get_the_title($id); ?></h3>
 				<div class="rt-product-widget-info">	
 					<p class="rt-feat-product-widget-description">

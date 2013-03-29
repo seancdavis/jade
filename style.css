@@ -6,7 +6,8 @@ div.rt-feat-product {
   width: 500px;
   margin: 0 0 15px 0;
   background: #68c5d7;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  padding: 0 0 10px 0; }
   div.rt-feat-product h3 {
     background: #288597;
     padding: 10px;
@@ -14,6 +15,8 @@ div.rt-feat-product {
     border-bottom: 3px solid white; }
   div.rt-feat-product .rt-product-info {
     padding: 10px; }
+  div.rt-feat-product .rt-feat-product-description {
+    margin: 0 0 5px 0; }
 
 h2.rt-product-title {
   font-weight: normal;
@@ -36,7 +39,7 @@ div.rt-product-description {
   color: white;
   background: #68c5d7;
   padding: 10px;
-  margin: 5px 0 0 0;
+  margin: 5px 0;
   width: 480px; }
 
 /* =BUTTONS
