@@ -92,7 +92,13 @@ $post_type_options = array(
 	'script_dir' => plugins_url() . '/jade/scripts.js', 
 	'style_dir' => plugins_url() . '/jade/style.css',
 	'dynamic_style_dir' => dirname(__FILE__) . '/custom-style.php',
-	//'taxonomies' => array('category')
+	//'taxonomies' => array('category'),
+	'custom_taxonomies' => array(
+		'Product Lines' => array(
+			'singular' => 'Product Line',
+			'hierarchical' => true 
+		),
+	),
 );
 
 /* Post Type Meta Options
